@@ -1,0 +1,13 @@
+
+<hr>
+<br>
+
+<div [ngSwitch]="alerta">
+  <div *ngSwitchCase="'success'">success</div>
+  <div *ngSwitchCase="'info'">info</div>
+  <div *ngSwitchCase="'warning'">warning</div>
+  <div *ngSwitchDefault>Dange</div>
+</div>
+
+
+<button (click)="alerta='warning'" type="button" name="button" class="btn bnt-primary">cambia el switch de info a warning, picar</button>

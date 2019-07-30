@@ -1,0 +1,58 @@
+<h1>Demos 1 <small>angular</small></h1>
+<hr>
+
+<app-css></app-css>
+
+<p> UN m P sin afectacion de estilos locales, solo globales</p>
+
+<hr>
+
+
+<div [ngClass]="alerta" class="alert" role="alert">
+  This is a success alert—check it out!
+</div>
+
+
+Aqui se cambia una variable "alarta" entre info y success
+<button type="button" name="button" class="btn btn-info"    (click)="alerta = 'alert-info'" >Info</button>
+<button type="button" name="button" class="btn btn-success" (click)="alerta = 'alert-success'" >Success</button>
+
+<br><br>
+
+<hr>
+
+Aqui se cambia el valor de un paremtros dentrod e un objecto: "propiedades  danger "
+
+<h3 [ngClass]="{ 'text-danger': propiedades.danger, 'text-info': !propiedades.danger }" >
+ hola mundo
+</h3>
+
+
+<button type="button" name="button" class="btn"
+        (click)="propiedades.danger = !propiedades.danger"
+        [ngClass]="{ 'btn-danger': propiedades.danger, 'btn-info':!propiedades.danger }" >
+
+        Cambiar
+</button>
+
+<br><br>
+<hr>
+<h3>Progceso asincrono</h3>
+Cambia el texto y bloque el boton por 3 seg para simular un proceso asincrono
+<button type="button" name="button" class="btn btn-primary" (click)="ejecutar()" [disabled]="loading" >
+    <i class=" fa " [ngClass]="{ 'fa-save':!loading, 'fa-refresh fa-spin':loading }"  >
+    </i>
+    <span *ngIf="!loading" > Guardar cambios</span>
+    <span *ngIf="loading">  Espera porfa</span>
+</button>
+
+<br><br>
+<hr>
+
+<h3>Directivas personalizadas</h3>
+
+Se crea una directiva personalizada "appResaltado" que hace al pasar el mouse por el elemento cambie del backgorund color
+
+<p [appResaltado]="'blue'">
+  Me pongo azul, pasa el mouse
+</p>
