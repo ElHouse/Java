@@ -2,3 +2,9 @@
 /LeetCode/bin/
 /LeetCode/.classpath
 /LeetCode/.project
+
+/target/
+/.classpath
+/*.project
+/.settings
+/*.springBeans
