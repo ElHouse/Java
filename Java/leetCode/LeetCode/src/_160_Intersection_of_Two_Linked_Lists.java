@@ -2,7 +2,7 @@ import java.util.*;
 
 import LinkedList.MyLinkedList.SinglyListNode;
 
-public class _160_IntersectionofTwoLinkedLists {
+public class _160_Intersection_of_Two_Linked_Lists {
 
 	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 		

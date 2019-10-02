@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class _169_MajorityElement {
+public class _169_Majority_Element {
 
 	public static void main(String[] args) {
 

@@ -1,7 +1,7 @@
 
 
 
-public class _263_UglyNumber {
+public class _263_Ugly_Number {
 
 //	Runtime: 1 ms, faster than 
 //		95.31% of Java online submissions for Ugly Number.

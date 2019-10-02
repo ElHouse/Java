@@ -1,5 +1,5 @@
 
-public class _14_LongestCommonPrefix {
+public class _14_Longest_Common_Prefix {
 
 	//Runtime: 1 ms, faster than 99.83% of Java online submissions for Longest Common Prefix.
 //	Memory Usage: 38.9 MB, less than 16.64% of Java online submissions for Longest Common Prefix.

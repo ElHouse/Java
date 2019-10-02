@@ -4,13 +4,13 @@ import LinkedList.MyLinkedList.SinglyListNode;
 //
 //Runtime: 54 ms, faster than 64.53% of Java online submissions for Design Linked List.
 //Memory Usage: 45.1 MB, less than 91.63% of Java online submissions for Design Linked List.
-public class _707_DesignLinkedList {
+public class _707_Design_Linked_List {
 
 	SinglyListNode head;
 	int size;
 	
 	/** Initialize your data structure here. */
-    public _707_DesignLinkedList() {
+    public _707_Design_Linked_List() {
         size = 0;
     	head = null;
     }

@@ -1,5 +1,6 @@
+import java.util.Arrays;
 
-public class _66_PlusOne {
+public class _66_Plus_One {
 	 public int[] plusOne(int[] digits) {
 	        
 	        boolean allNine = true;
@@ -8,6 +9,7 @@ public class _66_PlusOne {
 	                allNine = false;
 	            }
 	        }
+	        
 	        
 	        if(allNine) return allNineCase(digits.length);
 	        

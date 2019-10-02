@@ -1,5 +1,5 @@
 
-public class _142_LinkedListCycleII {
+public class _142_Linked_List_Cycle_II {
 
     public static ListNode detectCycle(ListNode head) {
     	

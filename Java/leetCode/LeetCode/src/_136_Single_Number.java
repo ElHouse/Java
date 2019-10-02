@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class _136_SingleNumber {
+public class _136_Single_Number {
 
 	
 	public static void main(String[] args) {
