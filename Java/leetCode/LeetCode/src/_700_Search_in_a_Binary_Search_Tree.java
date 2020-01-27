@@ -9,10 +9,8 @@ public class _700_Search_in_a_Binary_Search_Tree {
 //	Runtime: 0 ms, faster than 100.00% of Java online submissions for Search in a Binary Search Tree.
 //	Memory Usage: 39.7 MB, less than 86.67% of Java online submissions for Search in a Binary Search Tree.
 	public TreeNode searchBST(TreeNode root, int val) {
-	
-		if(root == null) {
-			
-		}
+
+		if(root == null) return null;
 		
 		return search(root, val);
 	}
@@ -22,8 +20,7 @@ public class _700_Search_in_a_Binary_Search_Tree {
 		TreeNode element = null;
 		
 		if(root.val == val) {
-			element = root;
-			return element;
+			return root;
 		}
 		
 		if(root.left!= null) {

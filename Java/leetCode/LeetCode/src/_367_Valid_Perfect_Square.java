@@ -25,6 +25,8 @@ public class _367_Valid_Perfect_Square {
 	}
 
 	
+	
+	
 	@Test
 	public void case1() {
 		
@@ -47,4 +49,17 @@ public class _367_Valid_Perfect_Square {
 		assertFalse(isPerfectSquare(83));
 	}
 	
+	
+//	System.out.println("num>"+num);
+//	if(num == 1) return true;
+//	
+//	for (int i = 1; i < num; i++) {
+//		if(i*i==num) {
+//			return true;
+//		}else if(i*i>num) {
+//			return false;
+//		}
+//	}
+//	
+//	return false;
 }

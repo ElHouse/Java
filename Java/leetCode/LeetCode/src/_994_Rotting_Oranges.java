@@ -7,109 +7,59 @@ import org.junit.Test;
 public class _994_Rotting_Oranges {
 
 	int r = 4;
+	boolean isARotten = false;
+		
+	public void rotting(int[][] grid, int x, int y) {
+		
+		if(x>= 0 && x < grid.length && y >= 0 && y<grid[x].length && grid[x][y] == 1 ) {
+			isARotten = true;
+			grid[x][y] = r;
+		}
+	}
 	
+//	Runtime: 1 ms, faster than 100.00% of Java online submissions for Rotting Oranges.
+//	Memory Usage: 38.9 MB, less than 81.25% of Java online submissions for Rotting Oranges.
 	public int orangesRotting(int[][] grid) {
 
-		
-		boolean flag = false;
+		boolean isAFresh  = false;		
 		int step = -1;
 		
-		
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				
-				System.out.print(" "+grid[i][j]);
-			}
-			System.out.println();
-		}
-		System.out.println("++++");
 		do {
 			
 			step++;
-			flag = false;
+			isAFresh  = false;
+			isARotten = false;
 			
 			for (int i = 0; i < grid.length; i++) {
 				for (int j = 0; j < grid[i].length; j++) {
 					
 					if(grid[i][j]==r-2) {
-						flag = true;
-						grid[i][j]=3;	
-						rottenUp(grid, i-1, j);
-						rottenDown(grid, i+1, j);
-						rottenLeft(grid, i, j-1);
-						rottenRight(grid, i, j+1);
+						grid[i][j]=0;	
+						rotting(grid, i-1, j);
+						rotting(grid, i+1, j);
+						rotting(grid, i  , j-1);
+						rotting(grid, i  , j+1);
+					}
+					if(grid[i][j]==1) {
+						isAFresh = true;
 					}
 				}
 			}
+			
 			r+=2;
-		}while(flag);
+
+		}while(isARotten);
 		
-		System.out.println("---------");
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				
-				System.out.print(" "+grid[i][j]);
-			}
-			System.out.println();
+			
+		if(!isARotten && isAFresh) {
+			return -1;
 		}
-		
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				if(grid[i][j]==1) {
-					return -1;
-				}
-			}
-		}
-		
-		
 		
 		System.out.println("step>"+step);
 		
-		return step-1;
+		return step;
 	}
-	
-	public void rottenUp(int[][] grid, int x, int y) {
-		
-		
-		if( x >= 0) {
-			if(grid[x][y]==1) {
-				grid[x][y] = r;
-			}
-		}
-	}
-	
-	public void rottenDown(int[][] grid, int x, int y) {
-		
-		
-		if( x < grid.length) {
-			if(grid[x][y]==1) {
-				grid[x][y] = r;
-			}
-		}
-	}
-	
-	public void rottenLeft(int[][] grid, int x, int y) {
-		
-		System.out.println(x);
-		System.out.println(y);
-
-		if( y >= 0) {
-			if(grid[x][y]==1) {
-				grid[x][y] = r;
-			}
-		}
-	}
-	
-	public void rottenRight(int[][] grid, int x, int y) {
-		
-		if( y < grid.length) {
-			System.out.println("right");
-			if(grid[x][y]==1) {
-				grid[x][y] = r;
-			}
-		}
-	}
-	
+			
 	@Test
 	public void case1() {
 		 System.out.println("-----------case 1");
@@ -146,6 +96,29 @@ public class _994_Rotting_Oranges {
 
 		
 		assertEquals(0,orangesRotting(grid));
+	}
+	
+	@Test
+	public void case5() {
+		
+		
+		System.out.println("-------------case 5");
+		int[][] grid = {{0}};
+
+		
+		assertEquals(0,orangesRotting(grid));
+	}
+	
+	
+	@Test
+	public void case6() {
+		
+		
+		System.out.println("-------------case 6");
+		int[][] grid = {{1},{2}};
+
+		
+		assertEquals(1,orangesRotting(grid));
 	}
 	
 }
